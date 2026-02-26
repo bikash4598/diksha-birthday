@@ -1,49 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday Diksha 🎂</title>
+<title>Diksha Birthday</title>
+
 <style>
 body {
   margin: 0;
   padding: 0;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  overflow: hidden;
+  font-family: cursive;
   text-align: center;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  color: white;
 }
-.container {
+
+/* Message Style */
+.message {
   margin-top: 120px;
+  color: darkred;
+  font-size: 28px;
+  animation: glow 2s infinite alternate;
 }
-h1 {
-  font-size: 45px;
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px pink; }
+  to { text-shadow: 0 0 25px red; }
 }
+
+/* Button Style */
 button {
   padding: 12px 25px;
   font-size: 18px;
-  border: none;
-  border-radius: 25px;
   background-color: white;
-  color: #ff4b5c;
+  border: none;
+  border-radius: 30px;
   cursor: pointer;
+  margin-top: 30px;
+  box-shadow: 0 0 10px pink;
+}
+
+button:hover {
+  background-color: pink;
+}
+
+/* Flower Animation */
+.flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flower {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
 }
 </style>
+
 </head>
 <body>
 
-<audio id="bgmusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+<h2 class="message">
+  Diksha 💕 <br><br>
+  You are not just special, <br>
+  You are the reason behind beautiful moments. <br><br>
+  Stay happy always 🌸✨ <br><br>
+  Your smile is my favorite notification 😊
+</h2>
 
-<div class="container">
-  <h1>Happy Birthday Diksha Gupta 🎉</h1>
-  <p>You are truly special. Keep smiling always 💖</p>
-  <button onclick="playMusic()">Click for Surprise ✨</button>
-</div>
+<button onclick="playMusic()">Click Here 🎶</button>
+
+<audio id="bgMusic" src="music.mp3"></audio>
+
+<div class="flowers"></div>
 
 <script>
+function createFlower() {
+  const flower = document.createElement("div");
+  flower.classList.add("flower");
+  flower.innerHTML = "🌸";
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  document.querySelector(".flowers").appendChild(flower);
+
+  setTimeout(() => {
+    flower.remove();
+  }, 5000);
+}
+
+function startFlowers() {
+  setInterval(createFlower, 300);
+}
+
 function playMusic() {
-  document.getElementById("bgmusic").play();
-  alert("Diksha, you are amazing 🌸 Stay blessed!");
+  document.getElementById("bgMusic").play();
+  startFlowers();
 }
 </script>
 
