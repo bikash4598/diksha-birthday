@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Diksha 🎂</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+}
+.container {
+  margin-top: 120px;
+}
+h1 {
+  font-size: 45px;
+}
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  color: #ff4b5c;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<audio id="bgmusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <h1>Happy Birthday Diksha Gupta 🎉</h1>
+  <p>You are truly special. Keep smiling always 💖</p>
+  <button onclick="playMusic()">Click for Surprise ✨</button>
+</div>
+
+<script>
+function playMusic() {
+  document.getElementById("bgmusic").play();
+  alert("Diksha, you are amazing 🌸 Stay blessed!");
+}
+</script>
+
+</body>
+</html>
